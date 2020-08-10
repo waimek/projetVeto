@@ -11,4 +11,7 @@
     <string name="password">MOT DE PASSE</string>
     <string name="rester_connecte">Rester connecté</string>
     <string name="mdp_oublie">Mot de passe oublié ?</string>
+    <string name="nouveau">Nouvel utilisateur</string>
+    <string name="confirmation_mdp">CONFIRMATION MOT DE PASSE</string>
+    <string name="confirmation_cgu">J\'accepte les conditions d\'utilisation de Vétossimo</string>
 </resources>
