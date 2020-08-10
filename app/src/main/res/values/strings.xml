@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Vetossimo.fr</string>
+    <string name="copyright">Copyright :&#169; Vetossimo.fr, tous droits réservés</string>
+    <string name="lorem">Sin autem ad adulescentiam perduxissent, dirimi tamen interdum contentione vel uxoriae condicionis vel commodi alicuius, quod idem adipisci uterque non posset. Quod si qui longius in amicitia provecti essent, tamen saepe labefactari, si in honoris contentionem incidissent; pestem enim nullam maiorem esse amicitiis quam in plerisque pecuniae cupiditatem, in optimis quibusque honoris certamen et gloriae; ex quo inimicitias maximas saepe inter amicissimos exstitisse.</string>
+    <string name="lorem_2">Quis enim aut eum diligat quem metuat, aut eum a quo se metui putet? Coluntur tamen simulatione dumtaxat ad tempus. Quod si forte, ut fit plerumque, ceciderunt, tum intellegitur quam fuerint inopes amicorum. Quod Tarquinium dixisse ferunt, tum exsulantem se intellexisse quos fidos amicos habuisset, quos infidos, cum iam neutris gratiam referre posset.</string>
+    <string name="solution_parfaite">Une solution parfaite pour vous !</string>
+    <string name="création_compte">Créer un compte</string>
+    <string name="connexion">Se connecter</string>
+    <string name="veterinaire">Vous êtes vétérinaire ?</string>
+    <string name="email">EMAIL</string>
+    <string name="password">MOT DE PASSE</string>
+    <string name="rester_connecte">Rester connecté</string>
+    <string name="mdp_oublie">Mot de passe oublié ?</string>
+</resources>
