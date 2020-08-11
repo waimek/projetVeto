@@ -1,9 +1,13 @@
-package com.example.projetveto;
+package com.example.projetveto.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.projetveto.R;
+import com.example.projetveto.activity.ConnexionActivity;
+import com.example.projetveto.activity.CreationCompteActivity;
 
 public class MainActivity extends AppCompatActivity {
 
