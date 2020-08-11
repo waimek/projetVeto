@@ -13,10 +13,10 @@ import java.util.List;
 public class RaceEspece {
     @PrimaryKey(autoGenerate = true)
     private int idEspeceRace;
-    protected List<Race> idRace;
-    private List<Espece> idEspece;
+    private int idRace;
+    private int idEspece;
 
-    public RaceEspece(int idEspeceRace, List<Race> idRace, List<Espece> idEspece) {
+    public RaceEspece(int idEspeceRace, int idRace, int idEspece) {
         this.idEspeceRace = idEspeceRace;
         this.idRace = idRace;
         this.idEspece = idEspece;
@@ -30,19 +30,19 @@ public class RaceEspece {
         this.idEspeceRace = idEspeceRace;
     }
 
-    public List<Race> getIdRace() {
+    public int getIdRace() {
         return idRace;
     }
 
-    public void setIdRace(List<Race> idRace) {
+    public void setIdRace(int idRace) {
         this.idRace = idRace;
     }
 
-    public List<Espece> getIdEspece() {
+    public int getIdEspece() {
         return idEspece;
     }
 
-    public void setIdEspece(List<Espece> idEspece) {
+    public void setIdEspece(int idEspece) {
         this.idEspece = idEspece;
     }
 

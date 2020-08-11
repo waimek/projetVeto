@@ -7,24 +7,35 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 import java.util.List;
 
-@Entity(foreignKeys = @ForeignKey(entity = RaceEspece.class,
+@Entity(foreignKeys = {@ForeignKey(entity = RaceEspece.class,
         parentColumns = "idEspeceRace",
-        childColumns = "raceEspece",
-        onDelete = ForeignKey.CASCADE))
+        childColumns = "idRaceEspece",
+        onDelete = ForeignKey.CASCADE),
+        @ForeignKey(entity = Proprietaire.class,
+        parentColumns = "id",
+        childColumns = "idProprietaire",
+        onDelete = ForeignKey.CASCADE)})
+
 public class Animal {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String nom;
     private Date dateNaissance;
-    private String IdentifiantInternational;
-    private RaceEspece raceEspece;
+    private String identifiantInternational;
+    private int idRaceEspece;
+    private int idProprietaire;
+    private boolean puce;
+    private boolean sterilise;
 
-    public Animal(int id, String nom, Date dateNaissance, String identifiantInternational, RaceEspece raceEspece) {
+    public Animal(int id, String nom, Date dateNaissance, String identifiantInternational, int idRaceEspece, int idProprietaire, boolean puce, boolean sterilise) {
         this.id = id;
         this.nom = nom;
         this.dateNaissance = dateNaissance;
-        IdentifiantInternational = identifiantInternational;
-        this.raceEspece = raceEspece;
+        this.identifiantInternational = identifiantInternational;
+        this.idRaceEspece = idRaceEspece;
+        this.idProprietaire = idProprietaire;
+        this.puce = puce;
+        this.sterilise = sterilise;
     }
 
     public int getId() {
@@ -52,19 +63,43 @@ public class Animal {
     }
 
     public String getIdentifiantInternational() {
-        return IdentifiantInternational;
+        return this.identifiantInternational;
     }
 
     public void setIdentifiantInternational(String identifiantInternational) {
-        IdentifiantInternational = identifiantInternational;
+        this.identifiantInternational = identifiantInternational;
     }
 
-    public RaceEspece getRaceEspece() {
-        return raceEspece;
+    public int getIdRaceEspece() {
+        return idRaceEspece;
     }
 
-    public void setRaceEspece(RaceEspece raceEspece) {
-        this.raceEspece = raceEspece;
+    public void setIdRaceEspece(int idRaceEspece) {
+        this.idRaceEspece = idRaceEspece;
+    }
+
+    public int getIdProprietaire() {
+        return idProprietaire;
+    }
+
+    public void setIdProprietaire(int idProprietaire) {
+        this.idProprietaire = idProprietaire;
+    }
+
+    public boolean isPuce() {
+        return puce;
+    }
+
+    public void setPuce(boolean puce) {
+        this.puce = puce;
+    }
+
+    public boolean isSterilise() {
+        return sterilise;
+    }
+
+    public void setSterilise(boolean sterilise) {
+        this.sterilise = sterilise;
     }
 
     @Override
@@ -73,8 +108,11 @@ public class Animal {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", dateNaissance=" + dateNaissance +
-                ", IdentifiantInternational='" + IdentifiantInternational + '\'' +
-                ", raceEspece=" + raceEspece +
+                ", identifiantInternational='" + identifiantInternational + '\'' +
+                ", idRaceEspece=" + idRaceEspece +
+                ", idProprietaire=" + idProprietaire +
+                ", puce=" + puce +
+                ", sterilise=" + sterilise +
                 '}';
     }
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
 import com.example.projetveto.bo.Animal;
 import com.example.projetveto.bo.Consultation;
@@ -16,6 +17,7 @@ import com.example.projetveto.bo.User;
 import com.example.projetveto.bo.Veto;
 
 @Database(entities = {Animal.class, Consultation.class, Espece.class, Proprietaire.class, Race.class, RaceEspece.class, User.class, Veto.class}, exportSchema = false, version = 1)
+@TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase INSTANCE;
 

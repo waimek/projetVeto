@@ -1,25 +1,40 @@
 package com.example.projetveto.bo;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
-import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
 
-@Entity
+@Entity(foreignKeys = @ForeignKey(entity = Veto.class,
+        parentColumns = "id",
+        childColumns = "idVeto",
+        onDelete = ForeignKey.CASCADE))
 public class Consultation {
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private Date dateHeure;
     private String remarques;
     private boolean passe;
-    private Timestamp dureeRdv;
+    private Long dureeRdv;
+    private int idVeto;
 
-    public Consultation(int id, Date dateHeure, String remarques, boolean passe, Timestamp dureeRdv) {
+    public Consultation(int id, Date dateHeure, String remarques, boolean passe, Long dureeRdv, int idVeto) {
         this.id = id;
         this.dateHeure = dateHeure;
         this.remarques = remarques;
         this.passe = passe;
         this.dureeRdv = dureeRdv;
+        this.idVeto = idVeto;
+    }
+
+    public int getIdVeto() {
+        return idVeto;
+    }
+
+    public void setIdVeto(int idVeto) {
+        this.idVeto = idVeto;
     }
 
     public int getId() {
@@ -54,11 +69,11 @@ public class Consultation {
         this.passe = passe;
     }
 
-    public Timestamp getDureeRdv() {
+    public Long getDureeRdv() {
         return dureeRdv;
     }
 
-    public void setDureeRdv(Timestamp dureeRdv) {
+    public void setDureeRdv(Long dureeRdv) {
         this.dureeRdv = dureeRdv;
     }
 
