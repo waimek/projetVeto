@@ -14,4 +14,22 @@
     <string name="nouveau">Nouvel utilisateur</string>
     <string name="confirmation_mdp">CONFIRMATION MOT DE PASSE</string>
     <string name="confirmation_cgu">J\'accepte les conditions d\'utilisation de Vétossimo</string>
+    <string name="infos_proprietaire">Mes informations de propriétaire</string>
+    <string name="infos_proprietaire_animaux">Pour ajouter, modifier, supprimer un animal rendez-vous sur \"Mes animaux\"</string>
+    <string name="monsieur">Monsieur</string>
+    <string name="madame">Madame</string>
+    <string name="modifier">Modifier</string>
+    <string name="nom">NOM</string>
+    <string name="prenom">PRENOM</string>
+    <string name="adresse">ADRESSE</string>
+    <string name="code_postal">CODE POSTAL</string>
+    <string name="ville">VILLE</string>
+    <string name="telephone">TELEPHONE</string>
+    <string name="infos_animaux">Les informations de mes animaux</string>
+    <string name="edit_animal">Modifier mon animal</string>
+    <string name="date_naissance">DATE DE NAISSANCE</string>
+    <string name="puce">Pucé</string>
+    <string name="tatoue">Tatoué</string>
+    <string name="numero_puce_tatouage">NUMÉRO D\'IDENTIFICATION</string>
+    <string name="remarques">REMARQUES</string>
 </resources>

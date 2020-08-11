@@ -1,4 +1,4 @@
-package com.example.projetveto;
+package com.example.projetVeto;
 
 import org.junit.Test;
 
