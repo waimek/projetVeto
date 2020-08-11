@@ -5,7 +5,6 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import java.util.Date;
-import java.util.List;
 
 @Entity(foreignKeys = @ForeignKey(entity = RaceEspece.class,
         parentColumns = "idEspeceRace",
@@ -18,13 +17,17 @@ public class Animal {
     private Date dateNaissance;
     private String IdentifiantInternational;
     private RaceEspece raceEspece;
+    private boolean puce;
+    private boolean sterilise;
 
-    public Animal(int id, String nom, Date dateNaissance, String identifiantInternational, RaceEspece raceEspece) {
+    public Animal(int id, String nom, Date dateNaissance, String identifiantInternational, RaceEspece raceEspece, boolean puce, boolean sterilise) {
         this.id = id;
         this.nom = nom;
         this.dateNaissance = dateNaissance;
         IdentifiantInternational = identifiantInternational;
         this.raceEspece = raceEspece;
+        this.puce = puce;
+        this.sterilise = sterilise;
     }
 
     public int getId() {
@@ -64,7 +67,24 @@ public class Animal {
     }
 
     public void setRaceEspece(RaceEspece raceEspece) {
+
         this.raceEspece = raceEspece;
+    }
+
+    public boolean isPuce() {
+        return puce;
+    }
+
+    public void setPuce(boolean puce) {
+        this.puce = puce;
+    }
+
+    public boolean isSterilise() {
+        return sterilise;
+    }
+
+    public void setSterilise(boolean sterilise) {
+        this.sterilise = sterilise;
     }
 
     @Override
@@ -75,6 +95,8 @@ public class Animal {
                 ", dateNaissance=" + dateNaissance +
                 ", IdentifiantInternational='" + IdentifiantInternational + '\'' +
                 ", raceEspece=" + raceEspece +
+                ", puce=" + puce +
+                ", sterilise=" + sterilise +
                 '}';
     }
 }

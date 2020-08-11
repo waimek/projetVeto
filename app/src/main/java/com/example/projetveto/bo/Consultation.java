@@ -1,6 +1,7 @@
 package com.example.projetveto.bo;
 
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -8,6 +9,7 @@ import java.util.Date;
 
 @Entity
 public class Consultation {
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private Date dateHeure;
     private String remarques;
