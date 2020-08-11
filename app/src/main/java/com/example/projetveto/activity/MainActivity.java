@@ -1,4 +1,4 @@
-package com.example.projetveto.activity;
+package com.example.projetveto;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

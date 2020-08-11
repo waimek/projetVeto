@@ -1,4 +1,4 @@
-package com.example.projetveto;
+package com.example.projetVeto;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
