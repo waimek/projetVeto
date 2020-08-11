@@ -19,7 +19,6 @@
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -34,14 +33,13 @@
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:layout_editor_absoluteX="99dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/et_confirmation_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
         android:ems="10"
         android:hint="@string/confirmation_mdp"
         android:inputType="textPassword"
@@ -52,9 +50,9 @@
         android:id="@+id/btn_valider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="220dp"
+        android:layout_marginTop="68dp"
         android:text="@string/connexion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_confirmation_password" />
 
 </android.support.constraint.ConstraintLayout>

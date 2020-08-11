@@ -32,4 +32,6 @@
     <string name="tatoue">Tatoué</string>
     <string name="numero_puce_tatouage">NUMÉRO D\'IDENTIFICATION</string>
     <string name="remarques">REMARQUES</string>
+    <string name="rendez_vous_passes">Rendez-vous passés</string>
+    <string name="prendre_rdv">Prendre RDV</string>
 </resources>
