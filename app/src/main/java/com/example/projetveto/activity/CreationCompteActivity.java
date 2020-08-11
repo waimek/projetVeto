@@ -3,6 +3,8 @@ package com.example.projetveto.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.projetveto.R;
+
 public class CreationCompteActivity extends AppCompatActivity {
 
     @Override
