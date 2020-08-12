@@ -34,5 +34,6 @@
     <string name="remarques">REMARQUES</string>
     <string name="rendez_vous_passes">Rendez-vous passés</string>
     <string name="prendre_rdv">Prendre RDV</string>
-
+    <string name="aucun_rdv">Vous n\'avez aucun rendez vous pour le moment</string>
+    <string name="choix_veto">Choisissez votre vétérinaire</string>
 </resources>

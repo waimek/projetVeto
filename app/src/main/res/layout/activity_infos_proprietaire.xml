@@ -19,7 +19,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="72dp"
         android:text="@string/infos_proprietaire"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,8 +77,8 @@
 
     <TextView
         android:id="@+id/txt_tel"
-        android:layout_width="67dp"
-        android:layout_height="27dp"
+        android:layout_width="110dp"
+        android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="14dp"
         android:text="066666666"
