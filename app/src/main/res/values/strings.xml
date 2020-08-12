@@ -28,7 +28,7 @@
     <string name="infos_animaux">Les informations de mes animaux</string>
     <string name="edit_animal">Modifier mon animal</string>
     <string name="date_naissance">DATE DE NAISSANCE</string>
-    <string name="puce">Pucé</string>
+    <string name="puce">Pucé/Tatoué</string>
     <string name="tatoue">Tatoué</string>
     <string name="numero_puce_tatouage">NUMÉRO D\'IDENTIFICATION</string>
     <string name="remarques">REMARQUES</string>
@@ -36,4 +36,5 @@
     <string name="prendre_rdv">Prendre RDV</string>
     <string name="aucun_rdv">Vous n\'avez aucun rendez vous pour le moment</string>
     <string name="choix_veto">Choisissez votre vétérinaire</string>
+    <string name="sterilise">Stérilisé</string>
 </resources>
