@@ -1,7 +1,10 @@
 package com.example.projetveto.bo;
 
 import androidx.room.Entity;
+<<<<<<< HEAD
 import androidx.room.ForeignKey;
+=======
+>>>>>>> 8e8cf90d736742864810d2cb570d2c58ca490e58
 import androidx.room.PrimaryKey;
 
 import java.sql.Timestamp;
