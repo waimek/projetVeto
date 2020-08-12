@@ -78,12 +78,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <CheckBox
-        android:id="@+id/chk_tatouage"
+        android:id="@+id/chk_sterilise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginBottom="27dp"
-        android:text="@string/tatoue"
+        android:text="@string/sterilise"
         app:layout_constraintBottom_toTopOf="@+id/et_numero_identification"
         app:layout_constraintStart_toEndOf="@+id/chk_puce" />
 
@@ -98,24 +98,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chk_puce" />
 
-    <EditText
-        android:id="@+id/et_remarques"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:ems="10"
-        android:hint="@string/remarques"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_numero_identification" />
-
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="@string/modifier"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_remarques" />
+        tools:layout_editor_absoluteY="490dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,8 +13,9 @@ public class User {
     private String ville;
     private String codePostal;
     private String email;
+    private String mdp;
 
-    public User(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email) {
+    public User(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -22,6 +23,17 @@ public class User {
         this.ville = ville;
         this.codePostal = codePostal;
         this.email = email;
+        this.mdp = mdp;
+    }
+
+    public User(String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.ville = ville;
+        this.codePostal = codePostal;
+        this.email = email;
+        this.mdp = mdp;
     }
 
     public int getId() {
@@ -78,6 +90,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
     }
 
     @Override

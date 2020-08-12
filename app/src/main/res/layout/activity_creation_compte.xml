@@ -54,6 +54,7 @@
         android:layout_marginTop="68dp"
         android:text="@string/connexion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_confirmation_password" />
+        app:layout_constraintTop_toBottomOf="@+id/et_confirmation_password"
+        android:onClick="onClickCreationCompte"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

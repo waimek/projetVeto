@@ -6,11 +6,13 @@ import androidx.room.Entity;
 public class Proprietaire extends User {
 
 
-    public Proprietaire(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email) {
-        super(id, nom, prenom, adresse, ville, codePostal, email);
-
+    public Proprietaire(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp) {
+        super(id, nom, prenom, adresse, ville, codePostal, email, mdp);
     }
 
+    public Proprietaire(String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp) {
+        super(nom, prenom, adresse, ville, codePostal, email, mdp);
+    }
 
     @Override
     public String toString() {
