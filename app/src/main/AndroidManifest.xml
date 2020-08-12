@@ -12,18 +12,20 @@
 
         <activity android:name="com.example.projetveto.activity.RendezVousActivity"></activity>
         <activity android:name=".activity.EditAnimalActivity" />
-        <activity android:name=".activity.InfosAnimauxActivity" />
-        <activity android:name=".activity.EditInfosProprietaireActivity" />
-        <activity android:name=".activity.InfosProprietaireActivity" />
-        <activity android:name=".activity.CreationCompteActivity" />
-        <activity android:name=".activity.ConnexionActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.InfosAnimauxActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.EditInfosProprietaireActivity" />
+        <activity android:name=".activity.InfosProprietaireActivity" />
+        <activity android:name=".activity.CreationCompteActivity" />
+        <activity android:name=".activity.ConnexionActivity" />
+<!--        <activity android:name=".activity.MainActivity">-->
+
+<!--        </activity>-->
     </application>
 
 </manifest>
