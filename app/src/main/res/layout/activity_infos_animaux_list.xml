@@ -1,58 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="20dip">
-<!--    <include-->
-<!--        android:id="@+id/toolbar"-->
-<!--        layout="@layout/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-
-<!--        />-->
+    android:layout_height="match_parent"
+    tools:context="com.example.projetveto.activity.InfosAnimauxActivity">
 
     <TextView
         android:id="@+id/activity_infos_animaux_nom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        />
+
     <TextView
         android:id="@+id/activity_infos_animaux_dateNaissance"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        />
 
     <TextView
         android:id="@+id/activity_infos_animaux_espece"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        />
 
     <TextView
         android:id="@+id/activity_infos_animaux_race"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        />
 
     <TextView
         android:id="@+id/activity_infos_animaux_puce"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        />
+
     <TextView
         android:id="@+id/activity_infos_animaux_sterilise"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        />
+
     <TextView
         android:id="@+id/activity_infos_animaux_remarques"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:layout_width="186dp"
+        android:hint="Modifier"
+        android:onClick="onClickEditAnimal"/>
+
+    <Button
+        android:layout_width="186dp"
+        android:hint="Modifier"
+        android:onClick="onClickDeleteAnimal"/>
 
 </TableLayout>

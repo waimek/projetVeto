@@ -45,12 +45,12 @@
         app:layout_constraintTop_toBottomOf="@id/animal_nom_insert" />
 
     <EditText
-        android:id="@+id/animal_Raceespece_insert"
+        android:id="@+id/animal_espece_insert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_marginTop="20dp"
-        android:hint="RaceEspeceId"
+        android:hint="Espece"
         app:layout_constraintTop_toBottomOf="@id/animal_naissance_insert" />
 
     <EditText
@@ -60,7 +60,7 @@
         android:layout_marginTop="20dp"
         android:inputType="number"
         android:hint="Proprio"
-        app:layout_constraintTop_toBottomOf="@id/animal_Raceespece_insert" />
+        app:layout_constraintTop_toBottomOf="@id/animal_espece_insert" />
 
     <CheckBox
         android:id="@+id/animal_puce_insert"

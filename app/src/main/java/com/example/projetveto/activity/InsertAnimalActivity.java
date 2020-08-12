@@ -1,5 +1,7 @@
 package com.example.projetveto.activity;
 
+import android.app.Application;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -7,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -20,7 +23,9 @@ import com.facebook.stetho.Stetho;
 import java.util.Date;
 
 public class InsertAnimalActivity extends AppCompatActivity {
-
+    Context context;
+    Application application;
+    Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +68,19 @@ public class InsertAnimalActivity extends AppCompatActivity {
         Date naissance = new Date(insertNaissance.getText().toString());
 
 
-        /**
-         * Insertion d'un espece
-         */
-        EditText insertEspece = findViewById(R.id.animal_Raceespece_insert);
+//            /**
+//             * Insertion d'un espece
+//             */
+//            context = this;
+////            String espece;
+//            Spinner spinner = (Spinner) findViewById(R.id.animal_espece_insert);
+//            // Spinner click listener
+//            spinner.setOnItemSelectedListener(this);
+//            // Loading spinner data from database
+//            String espece = loadSpinnerData();
+
+
+        EditText insertEspece = findViewById(R.id.animal_espece_insert);
         int espece = Integer.parseInt(insertEspece.getText().toString());
 
         /**
@@ -99,4 +113,44 @@ public class InsertAnimalActivity extends AppCompatActivity {
         Log.i("LucilleH", "InsertAnimal: " + vue);
         vue.insert(animal);
     }
+
+//    /**
+//     * Function to load the spinner data from SQLite database
+//     *
+//     * @return*/
+//    private String loadSpinnerData() {
+//        // Connexion à la base
+//        EspeceViewModel vueEpsece = new EspeceViewModel(application);
+////        EspeceBDDRepo db = new EspeceBDDRepo(context);
+//
+//        LiveData<List<Espece>> labels = vueEpsece.get();
+//        // Spinner Drop down elements
+////        LiveData<List<Espece>> lables = db.get();
+//
+//        // Creating adapter for spinner
+//        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
+//                android.R.layout.simple_spinner_item, (List<String>) labels);
+//
+//        // Drop down layout style - list view with radio button
+//        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        // attaching data adapter to spinner
+//        spinner.setAdapter(dataAdapter);
+//        return null;
+//    }
+
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        // On selecting a spinner item
+//        String label = parent.getItemAtPosition(position).toString();
+//
+//        // Showing selected spinner item
+//        Toast.makeText(parent.getContext(), "You selected: " + label,
+//                Toast.LENGTH_LONG).show();
+//    }
+//
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//    }
 }
