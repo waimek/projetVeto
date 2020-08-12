@@ -37,10 +37,10 @@ public class AnimalAdapter extends ArrayAdapter<Animal> {
         textViewNaissance.setText(String.valueOf(getItem(position).getDateNaissance()));
 
         TextView textViewEspece = nouvelleLigne.findViewById(R.id.activity_infos_animaux_espece);
-        textViewEspece.setText(String.valueOf(getItem(position).getRaceEspece().getIdEspece()));
+        textViewEspece.setText(String.valueOf(getItem(position).getIdRaceEspece()));
 
         TextView textViewRace = nouvelleLigne.findViewById(R.id.activity_infos_animaux_race);
-        textViewRace.setText(String.valueOf(getItem(position).getRaceEspece().getIdRace()));
+        textViewRace.setText(String.valueOf(getItem(position).getIdRaceEspece()));
 
         TextView textViewPuce = nouvelleLigne.findViewById(R.id.activity_infos_animaux_puce);
         textViewPuce.setText(String.valueOf(getItem(position).isPuce()));

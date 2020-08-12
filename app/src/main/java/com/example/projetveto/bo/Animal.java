@@ -20,7 +20,6 @@ public class Animal {
     private int id;
     private String nom;
     private Date dateNaissance;
-<<<<<<< HEAD
     private String identifiantInternational;
     private int idRaceEspece;
     private int idProprietaire;
@@ -34,21 +33,7 @@ public class Animal {
         this.identifiantInternational = identifiantInternational;
         this.idRaceEspece = idRaceEspece;
         this.idProprietaire = idProprietaire;
-=======
-    private String IdentifiantInternational;
-    private RaceEspece raceEspece;
-    private boolean puce;
-    private boolean sterilise;
 
-    public Animal(int id, String nom, Date dateNaissance, String identifiantInternational, RaceEspece raceEspece, boolean puce, boolean sterilise) {
-        this.id = id;
-        this.nom = nom;
-        this.dateNaissance = dateNaissance;
-        IdentifiantInternational = identifiantInternational;
-        this.raceEspece = raceEspece;
->>>>>>> 8e8cf90d736742864810d2cb570d2c58ca490e58
-        this.puce = puce;
-        this.sterilise = sterilise;
     }
 
     public int getId() {
@@ -76,7 +61,7 @@ public class Animal {
     }
 
     public String getIdentifiantInternational() {
-        return this.identifiantInternational;
+        return identifiantInternational;
     }
 
     public void setIdentifiantInternational(String identifiantInternational) {
@@ -111,28 +96,6 @@ public class Animal {
         return sterilise;
     }
 
-<<<<<<< HEAD
-    public void setSterilise(boolean sterilise) {
-        this.sterilise = sterilise;
-=======
-    public void setRaceEspece(RaceEspece raceEspece) {
-
-        this.raceEspece = raceEspece;
->>>>>>> 8e8cf90d736742864810d2cb570d2c58ca490e58
-    }
-
-    public boolean isPuce() {
-        return puce;
-    }
-
-    public void setPuce(boolean puce) {
-        this.puce = puce;
-    }
-
-    public boolean isSterilise() {
-        return sterilise;
-    }
-
     public void setSterilise(boolean sterilise) {
         this.sterilise = sterilise;
     }
@@ -143,14 +106,9 @@ public class Animal {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", dateNaissance=" + dateNaissance +
-<<<<<<< HEAD
                 ", identifiantInternational='" + identifiantInternational + '\'' +
                 ", idRaceEspece=" + idRaceEspece +
                 ", idProprietaire=" + idProprietaire +
-=======
-                ", IdentifiantInternational='" + IdentifiantInternational + '\'' +
-                ", raceEspece=" + raceEspece +
->>>>>>> 8e8cf90d736742864810d2cb570d2c58ca490e58
                 ", puce=" + puce +
                 ", sterilise=" + sterilise +
                 '}';
