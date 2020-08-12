@@ -8,7 +8,6 @@
     tools:context="com.example.projetveto.activity.MainActivity">
 
 
-
     <Button
         android:id="@+id/btn_connexion"
         android:layout_width="match_parent"

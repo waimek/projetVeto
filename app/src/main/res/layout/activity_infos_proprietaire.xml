@@ -6,11 +6,19 @@
     android:layout_height="match_parent"
     tools:context="com.example.projetveto.activity.InfosProprietaireActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/infos_proprietaire"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
