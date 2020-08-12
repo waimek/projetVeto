@@ -6,20 +6,20 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Espece {
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private int idEspece;
     private String nomEspece;
 
-    public Espece(int id, String nomEspece) {
-        this.id = id;
+    public Espece(int idEspece, String nomEspece) {
+        this.idEspece = idEspece;
         this.nomEspece = nomEspece;
     }
 
-    public int getId() {
-        return id;
+    public int getIdEspece() {
+        return idEspece;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEspece(int idEspece) {
+        this.idEspece = idEspece;
     }
 
     public String getNomEspece() {
@@ -33,7 +33,7 @@ public class Espece {
     @Override
     public String toString() {
         return "Espece{" +
-                "id=" + id +
+                "idEspece=" + idEspece +
                 ", nomEspece='" + nomEspece + '\'' +
                 '}';
     }

@@ -5,9 +5,7 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.projetveto.bo.Animal;
 import com.example.projetveto.bo.Espece;
-import com.example.projetveto.dal.AnimalDAO;
 import com.example.projetveto.dal.AppDatabase;
 import com.example.projetveto.dal.EspeceDAO;
 
@@ -22,7 +20,7 @@ public class EspeceBDDRepo implements EspeceRepository {
         especeDAO = MyDatabase.getEspeceDAO();
     }
     @Override
-    public void insert(Espece item) {
+    public void insert(final Espece item) {
         new AsyncTask<Espece, Void, Void>() {
             @Override
             protected Void doInBackground(Espece... especes) {

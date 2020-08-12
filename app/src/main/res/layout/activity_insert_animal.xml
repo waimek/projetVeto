@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.InsertAnimalActivity">
+    <TextView
+        android:id="@+id/titre_insertion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INSERTION"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/animal_nom_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Nom"
+        app:layout_constraintTop_toBottomOf="@id/titre_insertion" />
+
+    <EditText
+        android:id="@+id/animal_naissance_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="date"
+        android:hint="Date de Naissance"
+        app:layout_constraintTop_toBottomOf="@id/animal_nom_insert" />
+
+    <EditText
+        android:id="@+id/animal_Raceespece_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginTop="20dp"
+        android:hint="RaceEspeceId"
+        app:layout_constraintTop_toBottomOf="@id/animal_naissance_insert" />
+
+    <EditText
+        android:id="@+id/animal_propriotaire_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:hint="Proprio"
+        app:layout_constraintTop_toBottomOf="@id/animal_Raceespece_insert" />
+
+    <CheckBox
+        android:id="@+id/animal_puce_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:hint="Pucé/Tatoué"
+        app:layout_constraintTop_toBottomOf="@id/animal_propriotaire_insert" />
+
+    <CheckBox
+        android:id="@+id/animal_sterilise_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        android:hint="Sérilisé"
+        app:layout_constraintTop_toBottomOf="@id/animal_puce_insert" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="260dp"
+        android:onClick="onClickSave"
+        android:text="Enregistrer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/animal_sterilise_insert" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="105dp"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

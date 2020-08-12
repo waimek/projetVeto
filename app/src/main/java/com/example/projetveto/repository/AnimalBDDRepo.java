@@ -21,7 +21,7 @@ public class AnimalBDDRepo implements AnimalRepository {
     }
 
     @Override
-    public void insert(Animal item) {
+    public void insert(final Animal item) {
         new AsyncTask<Animal, Void, Void>() {
             @Override
             protected Void doInBackground(Animal... animals) {

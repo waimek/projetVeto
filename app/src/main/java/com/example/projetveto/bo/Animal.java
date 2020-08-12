@@ -1,41 +1,87 @@
 package com.example.projetveto.bo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity(foreignKeys = {@ForeignKey(entity = RaceEspece.class,
-        parentColumns = "idEspeceRace",
-        childColumns = "idRaceEspece",
-        onDelete = ForeignKey.CASCADE),
-        @ForeignKey(entity = Proprietaire.class,
-        parentColumns = "id",
-        childColumns = "idProprietaire",
-        onDelete = ForeignKey.CASCADE)})
+@Entity(foreignKeys = @ForeignKey(entity = Espece.class,
+        parentColumns = "idEspece",
+        childColumns = "idEspece",
+        onDelete = ForeignKey.CASCADE))
 
-public class Animal {
+public class Animal implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String nom;
     private Date dateNaissance;
     private String identifiantInternational;
-    private int idRaceEspece;
+    private int idEspece;
     private int idProprietaire;
     private boolean puce;
     private boolean sterilise;
 
-    public Animal(int id, String nom, Date dateNaissance, String identifiantInternational, int idRaceEspece, int idProprietaire, boolean puce, boolean sterilise) {
+    public Animal(int id, String nom, Date dateNaissance, String identifiantInternational, int idEspece, int idProprietaire, boolean puce, boolean sterilise) {
         this.id = id;
         this.nom = nom;
         this.dateNaissance = dateNaissance;
         this.identifiantInternational = identifiantInternational;
-        this.idRaceEspece = idRaceEspece;
+        this.idEspece = idEspece;
         this.idProprietaire = idProprietaire;
         this.puce = puce;
         this.sterilise = sterilise;
     }
+
+    protected Animal(Parcel in) {
+        id = in.readInt();
+        nom = in.readString();
+        identifiantInternational = in.readString();
+        idEspece = in.readInt();
+        idProprietaire = in.readInt();
+        puce = in.readByte() != 0;
+        sterilise = in.readByte() != 0;
+    }
+
+    public Animal(String nom, Date naissance, int idEspece, int idProprietaire, boolean puce, boolean sterilise) {
+        this.nom = nom;
+        this.dateNaissance = naissance;
+        this.idEspece = idEspece;
+        this.idProprietaire = idProprietaire;
+        this.puce = puce;
+        this.sterilise = sterilise;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(nom);
+        dest.writeString(identifiantInternational);
+        dest.writeInt(idEspece);
+        dest.writeInt(idProprietaire);
+        dest.writeByte((byte) (puce ? 1 : 0));
+        dest.writeByte((byte) (sterilise ? 1 : 0));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Animal> CREATOR = new Creator<Animal>() {
+        @Override
+        public Animal createFromParcel(Parcel in) {
+            return new Animal(in);
+        }
+
+        @Override
+        public Animal[] newArray(int size) {
+            return new Animal[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -69,12 +115,12 @@ public class Animal {
         this.identifiantInternational = identifiantInternational;
     }
 
-    public int getIdRaceEspece() {
-        return idRaceEspece;
+    public int getIdEspece() {
+        return idEspece;
     }
 
-    public void setIdRaceEspece(int idRaceEspece) {
-        this.idRaceEspece = idRaceEspece;
+    public void setIdEspece(int idEspece) {
+        this.idEspece = idEspece;
     }
 
     public int getIdProprietaire() {
@@ -108,7 +154,7 @@ public class Animal {
                 ", nom='" + nom + '\'' +
                 ", dateNaissance=" + dateNaissance +
                 ", identifiantInternational='" + identifiantInternational + '\'' +
-                ", idRaceEspece=" + idRaceEspece +
+                ", idEspece=" + idEspece +
                 ", idProprietaire=" + idProprietaire +
                 ", puce=" + puce +
                 ", sterilise=" + sterilise +

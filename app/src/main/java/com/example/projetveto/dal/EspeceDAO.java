@@ -7,7 +7,6 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.projetveto.bo.Animal;
 import com.example.projetveto.bo.Espece;
 
 import java.util.List;
@@ -23,7 +22,7 @@ public interface EspeceDAO {
     @Query("SELECT * FROM Espece")
     LiveData<List<Espece>> get();
 
-    @Query("SELECT * FROM Espece WHERE id = :id")
+    @Query("SELECT * FROM Espece WHERE idEspece = :id")
     List<Espece> get(int id);
 
     @Update
