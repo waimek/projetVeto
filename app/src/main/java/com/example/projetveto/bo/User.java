@@ -1,6 +1,7 @@
 package com.example.projetveto.bo;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
@@ -15,6 +16,7 @@ public class User {
     private String email;
     private String mdp;
 
+    @Ignore
     public User(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp) {
         this.id = id;
         this.nom = nom;
@@ -26,6 +28,17 @@ public class User {
         this.mdp = mdp;
     }
 
+    public User(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.ville = ville;
+        this.codePostal = codePostal;
+        this.email = email;
+    }
+
+    @Ignore
     public User(String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp) {
         this.nom = nom;
         this.prenom = prenom;
