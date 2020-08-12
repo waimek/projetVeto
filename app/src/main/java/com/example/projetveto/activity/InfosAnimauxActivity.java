@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.View;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +30,6 @@ public class InfosAnimauxActivity extends AppCompatActivity {
      */
     ListView maListe = null;
     Context context;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("Lucille", "InfosAnimauxActivity: ");
@@ -45,7 +44,7 @@ public class InfosAnimauxActivity extends AppCompatActivity {
         observer.observe((LifecycleOwner) this, new Observer<List<Animal>>() {
             @Override
             public void onChanged(List<Animal> animaux) {
-                AnimalAdapter adapter = new AnimalAdapter(InfosAnimauxActivity.this, R.layout.activity_infos_animaux_list, animaux);
+                AnimalAdapter adapter = new AnimalAdapter(InfosAnimauxActivity.this,R.layout.activity_infos_animaux_list,animaux);
                 maListe.setAdapter(adapter);
             }
         });
@@ -53,6 +52,30 @@ public class InfosAnimauxActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Modifier vos informations");
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent =null;
+        switch (item.getItemId()) {
+            case R.id.miAnimaux:
+                return true;
+            case R.id.miRdv:
+                intent = new Intent(InfosAnimauxActivity.this, RendezVousActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.miInfos:
+                intent = new Intent(InfosAnimauxActivity.this, InfosProprietaireActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

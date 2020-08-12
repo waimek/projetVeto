@@ -6,10 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.projetveto.bo.Animal;
 import com.example.projetveto.bo.Proprietaire;
-import com.example.projetveto.repository.AnimalBDDRepo;
-import com.example.projetveto.repository.AnimalRepository;
 import com.example.projetveto.repository.ProprietaireBDDRepo;
 import com.example.projetveto.repository.ProprietaireRepository;
 
@@ -19,14 +16,31 @@ public class ProprietaireViewModel extends AndroidViewModel {
     ProprietaireRepository repository;
 
     private LiveData<List<Proprietaire>> observer = null;
+    public LiveData<Proprietaire> observerGetByIdProprietaire = null;
+    public LiveData<Proprietaire> observerAuth =null;
     public ProprietaireViewModel(@NonNull Application application) {
         super(application);
         repository = new ProprietaireBDDRepo(application);
         observer = repository.get();
+
     }
     public LiveData<List<Proprietaire>> get() {
         return observer;
     }
+
+    public LiveData<Proprietaire> getObserverGetByIdProprietaire(){
+        return observerGetByIdProprietaire;
+    }
+    public LiveData<Proprietaire> getObserverAuth(){
+        return observerAuth;
+    }
+    public void getProprietaire(int id){
+        observerGetByIdProprietaire = repository.get(id);
+    }
+    public void getProprietaire(String email, String mdp){
+        observerAuth = repository.authentification(email, mdp);
+    }
+
 
     public void insert(Proprietaire proprietaire) {
         repository.insert(proprietaire);

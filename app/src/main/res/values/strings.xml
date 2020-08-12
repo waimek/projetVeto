@@ -37,4 +37,7 @@
     <string name="aucun_rdv">Vous n\'avez aucun rendez vous pour le moment</string>
     <string name="choix_veto">Choisissez votre vétérinaire</string>
     <string name="sterilise">Stérilisé</string>
+    <string name="nom_inconnu">Nom inconnu</string>
+    <string name="adresse_inconnue">Adresse inconnue</string>
+    <string name="tel_inconnu">Téléphone inconnu</string>
 </resources>

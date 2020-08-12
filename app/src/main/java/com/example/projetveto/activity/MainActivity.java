@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.projetveto.R;
 import com.example.projetveto.bo.Espece;
-import com.example.projetveto.bo.Proprietaire;
 import com.example.projetveto.viewmodel.EspeceViewModel;
 import com.example.projetveto.viewmodel.ProprietaireViewModel;
 import com.facebook.stetho.Stetho;
@@ -33,11 +32,9 @@ public class MainActivity extends AppCompatActivity {
         //Test insertion en base
         Stetho.initializeWithDefaults(this);
         //Espece
-        Espece espece = new Espece(1, "Chien");
-        Espece chatespece = new Espece(2, "Chat");
-        Proprietaire proprietaire = new Proprietaire(1,"COUCOU", "Gerard", "1 rue de la rue", "RENNES", "35000", "gerard@gmail.com");
-        Proprietaire proprietaire2 = new Proprietaire(2,"PEYROT", "Edouard", "2 rue de la rue", "RENNES", "35000", "ed@gmail.com");
-        Proprietaire proprietaire3 = new Proprietaire(3,"JENCLODE", "Lucille", "3 rue de la rue", "RENNES", "35000", "lucille@gmail.com");
+        Espece espece = new Espece( "Chien");
+        Espece chatespece = new Espece("Chat");
+
 //        Log.i("LucilleH", "InsertAnimal: " + animal);
 //        AnimalViewModel vue = ViewModelProviders.of(this).get(AnimalViewModel.class);
         EspeceViewModel vue = ViewModelProviders.of(this).get(EspeceViewModel.class);
@@ -45,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
 //        Log.i("LucilleH", "InsertAnimal: " + vue);
         vue.insert(espece);
         vue.insert(chatespece);
-        vuue.insert(proprietaire);
-        vuue.insert(proprietaire2);
-        vuue.insert(proprietaire3);
     }
 
     @Override

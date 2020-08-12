@@ -11,7 +11,9 @@ public interface ProprietaireRepository {
 
     LiveData<List<Proprietaire>> get();
 
-    Proprietaire get(int id);
+    LiveData<Proprietaire> get(int id);
+
+    LiveData<Proprietaire> authentification(String email, String mdp);
 
     void update(Proprietaire proprietaire);
 

@@ -2,6 +2,7 @@ package com.example.projetveto.activity;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -48,7 +49,21 @@ public class InsertAnimalActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //if(item.getItemId() == R.id.itemresearc)
-
+        Intent intent =null;
+        switch (item.getItemId()) {
+            case R.id.miAnimaux:
+                intent = new Intent(InsertAnimalActivity.this, InfosAnimauxActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.miRdv:
+                intent = new Intent(InsertAnimalActivity.this, RendezVousActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.miInfos:
+                intent = new Intent(InsertAnimalActivity.this, InfosProprietaireActivity.class);
+                startActivity(intent);
+                return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
