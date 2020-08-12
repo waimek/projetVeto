@@ -20,10 +20,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
         android:text="@string/edit_animal"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="75dp" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/et_date_naissance"
@@ -50,45 +51,52 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="11dp"
         android:text="SELECT RACE"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="235dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_date_naissance" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
         android:text="SELECT ESPECE"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="268dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <CheckBox
         android:id="@+id/chk_puce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
         android:text="@string/puce"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <CheckBox
         android:id="@+id/chk_tatouage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
+        android:layout_marginBottom="27dp"
         android:text="@string/tatoue"
-        app:layout_constraintStart_toEndOf="@+id/chk_puce"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintBottom_toTopOf="@+id/et_numero_identification"
+        app:layout_constraintStart_toEndOf="@+id/chk_puce" />
 
     <EditText
         android:id="@+id/et_numero_identification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
         android:ems="10"
         android:hint="@string/numero_puce_tatouage"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="365dp" />
+        app:layout_constraintTop_toBottomOf="@+id/chk_puce" />
 
     <EditText
         android:id="@+id/et_remarques"

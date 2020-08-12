@@ -9,23 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        <activity android:name="com.example.projetveto.activity.RendezVousActivity"></activity>
-        <activity android:name=".activity.EditAnimalActivity" />
-        <activity android:name=".activity.InfosAnimauxActivity">
+        <activity android:name=".activity.ChoixVetoActivity"></activity>
+        <activity android:name=".activity.RendezVousActivity" />
+        <activity android:name=".activity.EditAnimalActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.InfosAnimauxActivity" />
         <activity android:name=".activity.EditInfosProprietaireActivity" />
         <activity android:name=".activity.InfosProprietaireActivity" />
         <activity android:name=".activity.CreationCompteActivity" />
         <activity android:name=".activity.ConnexionActivity" />
-<!--        <activity android:name=".activity.MainActivity">-->
-
-<!--        </activity>-->
+        <activity android:name=".activity.MainActivity" />
     </application>
 
 </manifest>

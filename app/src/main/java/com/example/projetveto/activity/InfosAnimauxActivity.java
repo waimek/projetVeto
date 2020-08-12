@@ -6,17 +6,10 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.projetveto.R;
-import com.example.projetveto.activity.adapter.AnimalAdapter;
-import com.example.projetveto.bo.Animal;
 import com.example.projetveto.viewmodel.AnimalViewModel;
-
-import java.util.List;
 
 public class InfosAnimauxActivity extends AppCompatActivity {
     /*
@@ -33,8 +26,8 @@ public class InfosAnimauxActivity extends AppCompatActivity {
 
 //        AnimalViewModel view = new ViewModelProviders.of(this).get(AnimalViewModel.class);
 
-        maListe = findViewById(R.id.list_view);
-        LiveData<List<Animal>> observer = view.get();
+      //  maListe = findViewById(R.id.list_view);
+      /* LiveData<List<Animal>> observer = view.get();
 
         observer.observe((LifecycleOwner) this, new Observer<List<Animal>>() {
             @Override
@@ -42,6 +35,6 @@ public class InfosAnimauxActivity extends AppCompatActivity {
                 AnimalAdapter adapter = new AnimalAdapter(InfosAnimauxActivity.this,R.layout.activity_infos_animaux_list,animaux);
                 maListe.setAdapter(adapter);
             }
-        });
+        });*/
     }
 }
