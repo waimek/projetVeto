@@ -9,8 +9,7 @@ public class Espece {
     private int idEspece;
     private String nomEspece;
 
-    public Espece(int idEspece, String nomEspece) {
-        this.idEspece = idEspece;
+    public Espece(String nomEspece) {
         this.nomEspece = nomEspece;
     }
 

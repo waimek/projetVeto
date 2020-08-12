@@ -5,9 +5,7 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.projetveto.bo.Animal;
 import com.example.projetveto.bo.Proprietaire;
-import com.example.projetveto.dal.AnimalDAO;
 import com.example.projetveto.dal.AppDatabase;
 import com.example.projetveto.dal.ProprietaireDAO;
 
@@ -39,10 +37,14 @@ public class ProprietaireBDDRepo implements ProprietaireRepository {
     }
 
     @Override
-    public Proprietaire get(int id) {
-        return null;
+    public LiveData<Proprietaire> get(int id) {
+        return proprietaireDAO.get(id);
     }
 
+    @Override
+    public LiveData<Proprietaire> authentification(String email, String mdp) {
+        return proprietaireDAO.authentification(email, mdp);
+    }
 
     @Override
     public void update(Proprietaire proprietaire) {

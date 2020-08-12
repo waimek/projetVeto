@@ -1,11 +1,13 @@
 package com.example.projetveto.bo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class User {
+public class User implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String nom;
@@ -15,10 +17,9 @@ public class User {
     private String codePostal;
     private String email;
     private String mdp;
+    private String tel;
 
-    @Ignore
-    public User(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp) {
-        this.id = id;
+    public User(String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp, String tel) {
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -26,27 +27,40 @@ public class User {
         this.codePostal = codePostal;
         this.email = email;
         this.mdp = mdp;
+        this.tel = tel;
     }
 
-    public User(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.ville = ville;
-        this.codePostal = codePostal;
-        this.email = email;
+
+    protected User(Parcel in) {
+        id = in.readInt();
+        nom = in.readString();
+        prenom = in.readString();
+        adresse = in.readString();
+        ville = in.readString();
+        codePostal = in.readString();
+        email = in.readString();
+        mdp = in.readString();
+        tel = in.readString();
     }
 
-    @Ignore
-    public User(String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.ville = ville;
-        this.codePostal = codePostal;
-        this.email = email;
-        this.mdp = mdp;
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public int getId() {
@@ -124,5 +138,24 @@ public class User {
                 ", codePostal='" + codePostal + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(nom);
+        dest.writeString(prenom);
+        dest.writeString(adresse);
+        dest.writeString(ville);
+        dest.writeString(codePostal);
+        dest.writeString(email);
+        dest.writeString(mdp);
+        dest.writeString(tel);
     }
 }

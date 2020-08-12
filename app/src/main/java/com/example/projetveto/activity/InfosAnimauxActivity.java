@@ -1,8 +1,11 @@
 package com.example.projetveto.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +47,30 @@ public class InfosAnimauxActivity extends AppCompatActivity {
                 maListe.setAdapter(adapter);
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent =null;
+        switch (item.getItemId()) {
+            case R.id.miAnimaux:
+                return true;
+            case R.id.miRdv:
+                intent = new Intent(InfosAnimauxActivity.this, RendezVousActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.miInfos:
+                intent = new Intent(InfosAnimauxActivity.this, InfosProprietaireActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 //    public void onClickCreationAnimal(View view) {

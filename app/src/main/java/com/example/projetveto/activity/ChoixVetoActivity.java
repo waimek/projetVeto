@@ -13,4 +13,5 @@ public class ChoixVetoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choix_veto);
     }
+
 }

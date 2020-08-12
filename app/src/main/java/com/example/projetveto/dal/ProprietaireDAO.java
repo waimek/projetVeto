@@ -7,7 +7,6 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.projetveto.bo.Espece;
 import com.example.projetveto.bo.Proprietaire;
 
 import java.util.List;
@@ -24,7 +23,10 @@ public interface ProprietaireDAO {
     LiveData<List<Proprietaire>> get();
 
     @Query("SELECT * FROM Proprietaire WHERE id = :id")
-    List<Proprietaire> get(int id);
+    LiveData<Proprietaire> get(int id);
+
+    @Query("SELECT * FROM Proprietaire WHERE email = :email and mdp= :mdp")
+    LiveData<Proprietaire> authentification(String email, String mdp);
 
     @Update
     void update(Proprietaire proprietaire);

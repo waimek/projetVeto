@@ -7,19 +7,22 @@
         android:id="@+id/miRdv"
         android:icon="@drawable/ic_pet"
         app:showAsAction="ifRoom"
-        android:title="Mes rendez-vous">
+        android:title="Mes rendez-vous"
+        >
     </item>
     <item
         android:id="@+id/miInfos"
         android:icon="@drawable/ic_pet"
         app:showAsAction="never"
-        android:title="Mes informations">
-    </item>.
+        android:title="Mes informations"
+        >
+    </item>
     <item
         android:id="@+id/miAnimaux"
         android:icon="@drawable/ic_pet"
         app:showAsAction="never"
-        android:title="Mes animaux">
+        android:title="Mes animaux"
+        >
     </item>
     <item
         android:id="@+id/miDocs"
