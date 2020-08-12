@@ -1,6 +1,7 @@
 package com.example.projetveto.bo;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 
 @Entity
 public class Veto extends User {
@@ -9,6 +10,7 @@ public class Veto extends User {
     private Float heureDebutTravail;
     private Float heureFinTravail;
 
+    @Ignore
     public Veto(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp, String idVeto, Float heureDebutTravail, Float heureFinTravail) {
         super(id, nom, prenom, adresse, ville, codePostal, email, mdp);
         this.idVeto = idVeto;
@@ -16,8 +18,16 @@ public class Veto extends User {
         this.heureFinTravail = heureFinTravail;
     }
 
+    @Ignore
     public Veto(String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp, String idVeto, Float heureDebutTravail, Float heureFinTravail) {
         super(nom, prenom, adresse, ville, codePostal, email, mdp);
+        this.idVeto = idVeto;
+        this.heureDebutTravail = heureDebutTravail;
+        this.heureFinTravail = heureFinTravail;
+    }
+
+    public Veto(int id, String nom, String prenom, String adresse, String ville, String codePostal, String email, String idVeto, Float heureDebutTravail, Float heureFinTravail) {
+        super(id, nom, prenom, adresse, ville, codePostal, email);
         this.idVeto = idVeto;
         this.heureDebutTravail = heureDebutTravail;
         this.heureFinTravail = heureFinTravail;

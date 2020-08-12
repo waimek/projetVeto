@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".activity.InsertAnimalActivity">
-
-        </activity>
-        <activity android:name=".activity.RendezVousActivity" />
-        <activity android:name=".activity.EditAnimalActivity" />
-        <activity android:name=".activity.InfosAnimauxActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.RendezVousActivity" />
+        <activity android:name=".activity.EditAnimalActivity" />
+        <activity android:name=".activity.InfosAnimauxActivity">
+
         </activity>
         <activity android:name=".activity.EditInfosProprietaireActivity" />
         <activity android:name=".activity.InfosProprietaireActivity" />
