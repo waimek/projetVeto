@@ -33,7 +33,8 @@ public class Animal {
         this.identifiantInternational = identifiantInternational;
         this.idRaceEspece = idRaceEspece;
         this.idProprietaire = idProprietaire;
-
+        this.puce = puce;
+        this.sterilise = sterilise;
     }
 
     public int getId() {
