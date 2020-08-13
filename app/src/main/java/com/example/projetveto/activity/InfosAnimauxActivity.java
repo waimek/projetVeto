@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.projetveto.R;
 import com.example.projetveto.activity.adapter.AnimalAdapter;
 import com.example.projetveto.bo.Animal;
+import com.example.projetveto.bo.User;
 import com.example.projetveto.viewmodel.AnimalViewModel;
 
 import java.util.List;
@@ -29,8 +30,10 @@ public class InfosAnimauxActivity extends AppCompatActivity {
      */
     ListView maListe = null;
     Context context;
+    User userConnecte = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        userConnecte= (User) getIntent().getExtras().get("userConnecte");
         Log.i("Lucille", "InfosAnimauxActivity: ");
         super.onCreate(savedInstanceState);
         context = this;
@@ -63,10 +66,12 @@ public class InfosAnimauxActivity extends AppCompatActivity {
                 return true;
             case R.id.miRdv:
                 intent = new Intent(InfosAnimauxActivity.this, RendezVousActivity.class);
+                intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
             case R.id.miInfos:
                 intent = new Intent(InfosAnimauxActivity.this, InfosProprietaireActivity.class);
+                intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
         }

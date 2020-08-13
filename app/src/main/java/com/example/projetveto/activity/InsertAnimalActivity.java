@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.projetveto.R;
 import com.example.projetveto.bo.Animal;
+import com.example.projetveto.bo.User;
 import com.example.projetveto.viewmodel.AnimalViewModel;
 import com.facebook.stetho.Stetho;
 
@@ -22,12 +23,14 @@ import java.util.Date;
 
 public class InsertAnimalActivity extends AppCompatActivity {
 
+    User userConnecte=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_animal);
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = findViewById(R.id.toolbar);
+        userConnecte= (User) getIntent().getExtras().get("userConnecte");
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
@@ -48,14 +51,17 @@ public class InsertAnimalActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.miAnimaux:
                 intent = new Intent(InsertAnimalActivity.this, InfosAnimauxActivity.class);
+                intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
             case R.id.miRdv:
                 intent = new Intent(InsertAnimalActivity.this, RendezVousActivity.class);
+                intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
             case R.id.miInfos:
                 intent = new Intent(InsertAnimalActivity.this, InfosProprietaireActivity.class);
+                intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
         }
