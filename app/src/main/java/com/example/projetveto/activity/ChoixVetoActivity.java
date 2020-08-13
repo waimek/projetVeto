@@ -44,7 +44,7 @@ public class ChoixVetoActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Modifier vos informations");
+        getSupportActionBar().setTitle("Choisir un vétérinaire");
     }
 
     @Override

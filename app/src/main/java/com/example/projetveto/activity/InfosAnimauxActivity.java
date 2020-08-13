@@ -49,7 +49,7 @@ public class InfosAnimauxActivity extends AppCompatActivity {
         setContentView(R.layout.activity_infos_animaux);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Modifier vos informations");
+        getSupportActionBar().setTitle("Vos animaux");
 
         final AnimalViewModel view = ViewModelProviders.of((FragmentActivity) context).get(AnimalViewModel.class);
         Log.i("Lucille", "InfosAnimauxActivity: " + view.toString());
