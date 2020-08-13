@@ -51,9 +51,15 @@ public class RendezVousActivity extends AppCompatActivity {
             public void onChanged(List<Consultation> consultations) {
                 RendezVousAdapter adapter = new RendezVousAdapter(RendezVousActivity.this,R.layout.activity_rendez_vous_list,consultations);
                 listeAVenir.setAdapter(adapter);
-                if(listeAVenir.getItemAtPosition(0) != null){
+                if(listeAVenir != null){
                     TextView textView = findViewById(R.id.aucun_rdv);
-                    textView.setText("Voici vos rendez vous à venir :");
+                    try{
+                        listeAVenir.getItemAtPosition(0);
+                        textView.setText("Voici vos rendez vous à venir :");
+                    }catch (Exception e){
+                        textView.setText("Vous n\'avez aucun rendez-vous de prévu");
+                    }
+
                 }
             }
         });
