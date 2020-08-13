@@ -1,5 +1,7 @@
 package com.example.projetveto.activity;
 
+import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -24,13 +27,15 @@ import java.util.Date;
 public class InsertAnimalActivity extends AppCompatActivity {
 
     User userConnecte=null;
+    Context context;
+    Application application;
+    Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_animal);
         // Find the toolbar view inside the activity layout
         Toolbar toolbar = findViewById(R.id.toolbar);
-        userConnecte= (User) getIntent().getExtras().get("userConnecte");
         // Sets the Toolbar to act as the ActionBar for this Activity window.
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
@@ -51,17 +56,14 @@ public class InsertAnimalActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.miAnimaux:
                 intent = new Intent(InsertAnimalActivity.this, InfosAnimauxActivity.class);
-                intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
             case R.id.miRdv:
                 intent = new Intent(InsertAnimalActivity.this, RendezVousActivity.class);
-                intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
             case R.id.miInfos:
                 intent = new Intent(InsertAnimalActivity.this, InfosProprietaireActivity.class);
-                intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
         }
@@ -84,10 +86,19 @@ public class InsertAnimalActivity extends AppCompatActivity {
         Date naissance = new Date(insertNaissance.getText().toString());
 
 
-        /**
-         * Insertion d'un espece
-         */
-        EditText insertEspece = findViewById(R.id.animal_Raceespece_insert);
+//            /**
+//             * Insertion d'un espece
+//             */
+//            context = this;
+////            String espece;
+//            Spinner spinner = (Spinner) findViewById(R.id.animal_espece_insert);
+//            // Spinner click listener
+//            spinner.setOnItemSelectedListener(this);
+//            // Loading spinner data from database
+//            String espece = loadSpinnerData();
+
+
+        EditText insertEspece = findViewById(R.id.animal_espece_insert);
         int espece = Integer.parseInt(insertEspece.getText().toString());
 
         /**
@@ -121,5 +132,43 @@ public class InsertAnimalActivity extends AppCompatActivity {
         vue.insert(animal);
     }
 
+//    /**
+//     * Function to load the spinner data from SQLite database
+//     *
+//     * @return*/
+//    private String loadSpinnerData() {
+//        // Connexion à la base
+//        EspeceViewModel vueEpsece = new EspeceViewModel(application);
+////        EspeceBDDRepo db = new EspeceBDDRepo(context);
+//
+//        LiveData<List<Espece>> labels = vueEpsece.get();
+//        // Spinner Drop down elements
+////        LiveData<List<Espece>> lables = db.get();
+//
+//        // Creating adapter for spinner
+//        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
+//                android.R.layout.simple_spinner_item, (List<String>) labels);
+//
+//        // Drop down layout style - list view with radio button
+//        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        // attaching data adapter to spinner
+//        spinner.setAdapter(dataAdapter);
+//        return null;
+//    }
 
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        // On selecting a spinner item
+//        String label = parent.getItemAtPosition(position).toString();
+//
+//        // Showing selected spinner item
+//        Toast.makeText(parent.getContext(), "You selected: " + label,
+//                Toast.LENGTH_LONG).show();
+//    }
+//
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//    }
 }
