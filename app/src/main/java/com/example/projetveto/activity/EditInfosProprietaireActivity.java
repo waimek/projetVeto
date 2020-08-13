@@ -1,5 +1,6 @@
 package com.example.projetveto.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -78,7 +79,10 @@ public class EditInfosProprietaireActivity extends AppCompatActivity {
         userConnecte.setCodePostal(etCp.getText().toString());
 
         ProprietaireViewModel pvm = new ViewModelProvider(this).get(ProprietaireViewModel.class);
-        pvm.update(new Proprietaire(userConnecte.getNom(),userConnecte.getPrenom(),userConnecte.getAdresse(),userConnecte.getVille(),userConnecte.getCodePostal(),userConnecte.getEmail(),userConnecte.getMdp(),userConnecte.getTel()));
-        finish();
+        Proprietaire userConnecteModified = new Proprietaire(userConnecte.getNom(),userConnecte.getPrenom(),userConnecte.getAdresse(),userConnecte.getVille(),userConnecte.getCodePostal(),userConnecte.getEmail(),userConnecte.getMdp(),userConnecte.getTel());
+        pvm.update(userConnecteModified);
+        Intent inentToInfoProprio = new Intent(this,InfosProprietaireActivity.class);
+         inentToInfoProprio.putExtra("userConnecte",userConnecteModified) ;
+        startActivity(inentToInfoProprio);
     }
 }
