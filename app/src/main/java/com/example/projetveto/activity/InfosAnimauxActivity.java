@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
@@ -55,23 +54,23 @@ public class InfosAnimauxActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Modifier vos informations");
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent =null;
-        switch (item.getItemId()) {
-            case R.id.miAnimaux:
-                return true;
-            case R.id.miRdv:
-                intent = new Intent(InfosAnimauxActivity.this, RendezVousActivity.class);
-                startActivity(intent);
-                return true;
-            case R.id.miInfos:
-                intent = new Intent(InfosAnimauxActivity.this, InfosProprietaireActivity.class);
-                startActivity(intent);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        Intent intent =null;
+//        switch (item.getItemId()) {
+//            case R.id.miAnimaux:
+//                return true;
+//            case R.id.miRdv:
+//                intent = new Intent(InfosAnimauxActivity.this, RendezVousActivity.class);
+//                startActivity(intent);
+//                return true;
+//            case R.id.miInfos:
+//                intent = new Intent(InfosAnimauxActivity.this, InfosProprietaireActivity.class);
+//                startActivity(intent);
+//                return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -97,5 +96,10 @@ public class InfosAnimauxActivity extends AppCompatActivity {
     }
 
     public void onClickDeleteAnimal(View view) {
+    }
+
+    public void onClickAddAnimal(View view) {
+        Intent intent = new Intent(this,InsertAnimalActivity.class);
+        startActivity(intent);
     }
 }

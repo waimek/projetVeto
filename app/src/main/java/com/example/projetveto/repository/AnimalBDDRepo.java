@@ -38,8 +38,9 @@ public class AnimalBDDRepo implements AnimalRepository {
     }
 
     @Override
-    public Animal get(int id) {
-        return null;
+    public LiveData<List<Animal>> get(int id) {
+
+        return animalDAO.get();
     }
 
     @Override

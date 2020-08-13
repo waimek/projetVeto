@@ -122,11 +122,13 @@ public class InsertAnimalActivity extends AppCompatActivity {
             sterilise = true;
         }
 //        Toast.makeText(this, "Le produit a bien été ajouté " + titre + " , " + price + " , " + description + " , " + grade +  " , " + bought + " . ", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, InfosAnimauxActivity.class);
         Animal animal = new Animal(nom, naissance, espece, proprio, puce, sterilise);
         Log.i("LucilleH", "InsertAnimal: " + animal);
         AnimalViewModel vue = ViewModelProviders.of(this).get(AnimalViewModel.class);
         Log.i("LucilleH", "InsertAnimal: " + vue);
         vue.insert(animal);
+        startActivity(intent);
     }
 
 //    /**

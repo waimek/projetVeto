@@ -89,7 +89,8 @@
         android:text="Enregistrer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/animal_sterilise_insert" />
+        app:layout_constraintTop_toBottomOf="@id/animal_sterilise_insert"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
