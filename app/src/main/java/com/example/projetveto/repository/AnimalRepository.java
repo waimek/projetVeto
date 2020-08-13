@@ -11,7 +11,7 @@ public interface AnimalRepository {
 
     LiveData<List<Animal>> get();
 
-    LiveData<List<Animal>> get(int idProprietaire);
+    LiveData<List<Animal>> get(int id);
 
     void update(Animal animal);
 

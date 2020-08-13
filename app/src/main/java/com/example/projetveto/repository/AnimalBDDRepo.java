@@ -40,7 +40,7 @@ public class AnimalBDDRepo implements AnimalRepository {
     @Override
     public LiveData<List<Animal>> get(int id) {
 
-        return animalDAO.get();
+        return animalDAO.get(id);
     }
 
     @Override

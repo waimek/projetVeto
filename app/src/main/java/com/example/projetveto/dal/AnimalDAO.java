@@ -20,7 +20,7 @@ public interface AnimalDAO {
     void insert(Animal...items);
 
     @Query("SELECT * FROM Animal WHERE idProprietaire = :idProprietaire")
-    List<Animal> get(int idProprietaire);
+    LiveData<List<Animal>> get(int idProprietaire);
 
     @Query("SELECT * FROM Animal")
     LiveData<List<Animal>> get();

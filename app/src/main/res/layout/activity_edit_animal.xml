@@ -97,7 +97,9 @@
         android:layout_marginTop="24dp"
         android:text="@string/modifier"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_numero_identification" />
+        app:layout_constraintTop_toBottomOf="@+id/et_numero_identification"
+        android:onClick="onClickEdit"
+        />
 
     <Button
         android:id="@+id/button3"
@@ -106,6 +108,8 @@
         android:layout_marginTop="20dp"
         android:text="annuler"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        android:onClick="onClickComeBack"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

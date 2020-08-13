@@ -35,6 +35,7 @@ public class ProprietaireViewModel extends AndroidViewModel {
         return observerAuth;
     }
     public void getProprietaire(int id){
+
         observerGetByIdProprietaire = repository.get(id);
     }
     public void getProprietaire(String email, String mdp){

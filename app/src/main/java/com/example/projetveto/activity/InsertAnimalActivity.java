@@ -32,7 +32,7 @@ public class InsertAnimalActivity extends AppCompatActivity {
     Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        userConnecte= (User) getIntent().getExtras().get("userConnecte");
+//        userConnecte= (User) getIntent().getExtras().get("userConnecte");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_animal);
         // Find the toolbar view inside the activity layout
@@ -60,16 +60,16 @@ public class InsertAnimalActivity extends AppCompatActivity {
                 intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
-            case R.id.miRdv:
-                intent = new Intent(InsertAnimalActivity.this, RendezVousActivity.class);
-                intent.putExtra("userConnecte",userConnecte);
-                startActivity(intent);
-                return true;
-            case R.id.miInfos:
-                intent = new Intent(InsertAnimalActivity.this, InfosProprietaireActivity.class);
-                intent.putExtra("userConnecte",userConnecte);
-                startActivity(intent);
-                return true;
+//            case R.id.miRdv:
+//                intent = new Intent(InsertAnimalActivity.this, RendezVousActivity.class);
+//                intent.putExtra("userConnecte",userConnecte);
+//                startActivity(intent);
+//                return true;
+//            case R.id.miInfos:
+//                intent = new Intent(InsertAnimalActivity.this, InfosProprietaireActivity.class);
+//                intent.putExtra("userConnecte",userConnecte);
+//                startActivity(intent);
+//                return true;
         }
         return super.onOptionsItemSelected(item);
     }
