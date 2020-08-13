@@ -47,25 +47,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+
+    <EditText
+        android:id="@+id/textViewEspece"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="11dp"
-        android:text="SELECT RACE"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:hint="ESPECE"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_date_naissance" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        android:text="SELECT ESPECE"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <CheckBox
         android:id="@+id/chk_puce"
@@ -75,7 +67,7 @@
         android:layout_marginTop="18dp"
         android:text="@string/puce"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEspece" />
 
     <CheckBox
         android:id="@+id/chk_sterilise"
@@ -102,9 +94,22 @@
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="24dp"
         android:text="@string/modifier"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_numero_identification" />
+        app:layout_constraintTop_toBottomOf="@+id/et_numero_identification"
+        android:onClick="onClickEdit"
+        />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="annuler"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        android:onClick="onClickComeBack"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

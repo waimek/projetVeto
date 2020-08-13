@@ -15,6 +15,7 @@ import java.util.List;
 public class AnimalViewModel extends AndroidViewModel {
     AnimalRepository repository;
 
+    private LiveData<List<Animal>> observerGetIdByAnimal = null;
     private LiveData<List<Animal>> observer = null;
     public AnimalViewModel(@NonNull Application application) {
         super(application);
@@ -23,6 +24,10 @@ public class AnimalViewModel extends AndroidViewModel {
     }
     public LiveData<List<Animal>> get() {
         return observer;
+    }
+
+    public void get(int id) {
+        observerGetIdByAnimal = repository.get(id);
     }
 
     public void insert(Animal animal) {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.projetveto.activity.InfosAnimauxActivity"
-    android:layout_marginBottom="20dp"
+
     >
 
     <include android:id="@+id/toolbar"
@@ -19,12 +19,13 @@
 
         <ListView
             android:id="@+id/list_view"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/infos_animaux"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar"
+            android:layout_marginTop="70dp"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -37,6 +38,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@android:drawable/ic_input_add"
-
+            android:onClick="onClickAddAnimal"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>

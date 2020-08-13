@@ -9,14 +9,12 @@ public class Veto extends User {
     private Float heureDebutTravail;
     private Float heureFinTravail;
 
-
     public Veto(String nom, String prenom, String adresse, String ville, String codePostal, String email, String mdp, String tel, String idVeto, Float heureDebutTravail, Float heureFinTravail) {
         super(nom, prenom, adresse, ville, codePostal, email, mdp, tel);
         this.idVeto = idVeto;
         this.heureDebutTravail = heureDebutTravail;
         this.heureFinTravail = heureFinTravail;
     }
-
 
 
     public String getIdVeto() {

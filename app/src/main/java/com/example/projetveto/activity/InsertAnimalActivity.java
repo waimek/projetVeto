@@ -32,7 +32,7 @@ public class InsertAnimalActivity extends AppCompatActivity {
     Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        userConnecte= (User) getIntent().getExtras().get("userConnecte");
+//        userConnecte= (User) getIntent().getExtras().get("userConnecte");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_animal);
         // Find the toolbar view inside the activity layout
@@ -59,16 +59,16 @@ public class InsertAnimalActivity extends AppCompatActivity {
                 intent.putExtra("userConnecte",userConnecte);
                 startActivity(intent);
                 return true;
-            case R.id.miRdv:
-                intent = new Intent(InsertAnimalActivity.this, RendezVousActivity.class);
-                intent.putExtra("userConnecte",userConnecte);
-                startActivity(intent);
-                return true;
-            case R.id.miInfos:
-                intent = new Intent(InsertAnimalActivity.this, InfosProprietaireActivity.class);
-                intent.putExtra("userConnecte",userConnecte);
-                startActivity(intent);
-                return true;
+//            case R.id.miRdv:
+//                intent = new Intent(InsertAnimalActivity.this, RendezVousActivity.class);
+//                intent.putExtra("userConnecte",userConnecte);
+//                startActivity(intent);
+//                return true;
+//            case R.id.miInfos:
+//                intent = new Intent(InsertAnimalActivity.this, InfosProprietaireActivity.class);
+//                intent.putExtra("userConnecte",userConnecte);
+//                startActivity(intent);
+//                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -128,11 +128,13 @@ public class InsertAnimalActivity extends AppCompatActivity {
             sterilise = true;
         }
 //        Toast.makeText(this, "Le produit a bien été ajouté " + titre + " , " + price + " , " + description + " , " + grade +  " , " + bought + " . ", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, InfosAnimauxActivity.class);
         Animal animal = new Animal(nom, naissance, espece, proprio, puce, sterilise);
         Log.i("LucilleH", "InsertAnimal: " + animal);
         AnimalViewModel vue = ViewModelProviders.of(this).get(AnimalViewModel.class);
         Log.i("LucilleH", "InsertAnimal: " + vue);
         vue.insert(animal);
+        startActivity(intent);
     }
 
 //    /**

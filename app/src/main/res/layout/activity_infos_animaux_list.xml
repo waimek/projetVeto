@@ -3,66 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+
     tools:context="com.example.projetveto.activity.InfosAnimauxActivity">
 
     <TextView
         android:id="@+id/activity_infos_animaux_nom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/activity_infos_animaux_dateNaissance"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/activity_infos_animaux_espece"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/activity_infos_animaux_race"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/activity_infos_animaux_puce"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/activity_infos_animaux_sterilise"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/activity_infos_animaux_remarques"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        />
+        android:layout_weight="1" />
 
     <Button
+        android:id="@+id/btn_edit"
         android:layout_width="186dp"
-        android:hint="Modifier"
-        android:onClick="onClickEditAnimal"/>
+        android:hint="Modifier" />
 
     <Button
+        android:id="@+id/btn_delete"
         android:layout_width="186dp"
-        android:hint="Modifier"
-        android:onClick="onClickDeleteAnimal"/>
+        android:hint="Supprimer" />
 
 </TableLayout>
