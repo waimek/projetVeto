@@ -5,9 +5,7 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.projetveto.bo.Animal;
 import com.example.projetveto.bo.Consultation;
-import com.example.projetveto.dal.AnimalDAO;
 import com.example.projetveto.dal.AppDatabase;
 import com.example.projetveto.dal.ConsultationDAO;
 
@@ -36,6 +34,18 @@ public class ConsultationBDDRepo implements ConsultationRepository {
     @Override
     public LiveData<List<Consultation>> get() {
         return consultationDAO.get();
+    }
+
+
+    @Override
+    public LiveData<List<Consultation>> getRdvPasse(int id) {
+        return consultationDAO.getRdvPasse(id);
+    }
+
+
+    @Override
+    public LiveData<List<Consultation>> getRdvAVenir(int id) {
+        return consultationDAO.getRdvAVenir(id);
     }
 
     @Override

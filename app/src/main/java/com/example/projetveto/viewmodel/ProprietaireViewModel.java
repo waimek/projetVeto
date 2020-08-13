@@ -31,6 +31,7 @@ public class ProprietaireViewModel extends AndroidViewModel {
     public LiveData<Proprietaire> getObserverGetByIdProprietaire(){
         return observerGetByIdProprietaire;
     }
+
     public LiveData<Proprietaire> getObserverAuth(){
         return observerAuth;
     }

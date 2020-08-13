@@ -5,18 +5,30 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.projetveto.R;
+import com.example.projetveto.activity.adapter.RendezVousAdapter;
+import com.example.projetveto.bo.Consultation;
 import com.example.projetveto.bo.User;
+import com.example.projetveto.viewmodel.ConsultationViewModel;
+
+import java.util.List;
 
 
 public class RendezVousActivity extends AppCompatActivity {
 
     User userConnecte =null;
-
+    ListView listeAVenir=null;
+    ListView listePasse=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +40,36 @@ public class RendezVousActivity extends AppCompatActivity {
         userConnecte= (User) getIntent().getExtras().get("userConnecte");
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Mes rendez-vous");
+
+        ConsultationViewModel view = new ViewModelProvider(this).get(ConsultationViewModel.class);
+        listeAVenir = findViewById(R.id.list_view_rdv);
+        LiveData<List<Consultation>> observer = view.getObserverGetRdvAVenir(userConnecte.getId());
+
+        observer.observe((LifecycleOwner) this, new Observer<List<Consultation>>() {
+
+            @Override
+            public void onChanged(List<Consultation> consultations) {
+                RendezVousAdapter adapter = new RendezVousAdapter(RendezVousActivity.this,R.layout.activity_rendez_vous_list,consultations);
+                listeAVenir.setAdapter(adapter);
+                if(listeAVenir.getItemAtPosition(0) != null){
+                    TextView textView = findViewById(R.id.aucun_rdv);
+                    textView.setText("Voici vos rendez vous à venir :");
+                }
+            }
+        });
+
+
+        listePasse = findViewById(R.id.list_view_rdv_passe);
+        LiveData<List<Consultation>> observer2 = view.getObserverGetRdvPasse(userConnecte.getId());
+
+        observer2.observe((LifecycleOwner) this, new Observer<List<Consultation>>() {
+            @Override
+            public void onChanged(List<Consultation> consultations) {
+                RendezVousAdapter adapter = new RendezVousAdapter(RendezVousActivity.this,R.layout.activity_rendez_vous_list,consultations);
+                listePasse.setAdapter(adapter);
+            }
+        });
+
     }
 
     @Override
@@ -39,7 +81,6 @@ public class RendezVousActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //if(item.getItemId() == R.id.itemresearc)
         Intent intent =null;
         switch (item.getItemId()) {
             case R.id.miAnimaux:
