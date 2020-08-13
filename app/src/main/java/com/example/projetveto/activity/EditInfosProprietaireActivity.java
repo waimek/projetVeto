@@ -59,7 +59,24 @@ public class EditInfosProprietaireActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //if(item.getItemId() == R.id.itemresearc)
-
+        Intent intent =null;
+        switch (item.getItemId()) {
+            case R.id.miAnimaux:
+                intent = new Intent(EditInfosProprietaireActivity.this, InfosAnimauxActivity.class);
+                intent.putExtra("userConnecte",userConnecte);
+                startActivity(intent);
+                return true;
+            case R.id.miRdv:
+                intent = new Intent(EditInfosProprietaireActivity.this, RendezVousActivity.class);
+                intent.putExtra("userConnecte",userConnecte);
+                startActivity(intent);
+                return true;
+            case R.id.miInfos:
+                intent = new Intent(EditInfosProprietaireActivity.this, InfosProprietaireActivity.class);
+                intent.putExtra("userConnecte",userConnecte);
+                startActivity(intent);
+                return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

@@ -25,6 +25,12 @@ public interface ConsultationDAO {
     @Query("SELECT * FROM Consultation WHERE id = :id")
     List<Consultation> get(int id);
 
+    @Query("SELECT * FROM Consultation WHERE idProprietaire = :id and dateHeure<date('now')")
+    LiveData<List<Consultation>> getRdvPasse(int id);
+
+    @Query("SELECT * FROM Consultation WHERE idProprietaire = :id and dateHeure>date('now')")
+    LiveData<List<Consultation>> getRdvAVenir(int id);
+
     @Update
     void update(Consultation consultation);
 

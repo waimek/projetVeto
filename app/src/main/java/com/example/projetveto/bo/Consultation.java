@@ -6,10 +6,15 @@ import androidx.room.PrimaryKey;
 
 import java.util.Date;
 
-@Entity(foreignKeys = @ForeignKey(entity = Veto.class,
+@Entity(foreignKeys = {@ForeignKey(entity = Veto.class,
         parentColumns = "id",
         childColumns = "idVeto",
-        onDelete = ForeignKey.CASCADE))
+        onDelete = ForeignKey.CASCADE),
+        @ForeignKey(entity = Proprietaire.class,
+        parentColumns = "id",
+        childColumns = "idProprietaire",
+        onDelete = ForeignKey.CASCADE)})
+
 public class Consultation {
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -18,14 +23,24 @@ public class Consultation {
     private boolean passe;
     private Long dureeRdv;
     private int idVeto;
+    private int idProprietaire;
 
-    public Consultation(int id, Date dateHeure, String remarques, boolean passe, Long dureeRdv, int idVeto) {
-        this.id = id;
+    public Consultation(Date dateHeure, String remarques, boolean passe, Long dureeRdv, int idVeto, int idProprietaire) {
         this.dateHeure = dateHeure;
         this.remarques = remarques;
         this.passe = passe;
         this.dureeRdv = dureeRdv;
         this.idVeto = idVeto;
+        this.idProprietaire = idProprietaire;
+    }
+
+
+    public int getIdProprietaire() {
+        return idProprietaire;
+    }
+
+    public void setIdProprietaire(int idProprietaire) {
+        this.idProprietaire = idProprietaire;
     }
 
     public int getIdVeto() {

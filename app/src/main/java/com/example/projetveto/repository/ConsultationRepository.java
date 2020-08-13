@@ -13,6 +13,10 @@ public interface ConsultationRepository {
 
     Consultation get(int id);
 
+    LiveData<List<Consultation>> getRdvPasse(int id);
+
+    LiveData<List<Consultation>> getRdvAVenir(int id);
+
     void update(Consultation consultation);
 
     void delete(Consultation consultation);

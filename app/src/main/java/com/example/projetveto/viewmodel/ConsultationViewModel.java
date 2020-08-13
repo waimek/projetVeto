@@ -6,10 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.projetveto.bo.Animal;
 import com.example.projetveto.bo.Consultation;
-import com.example.projetveto.repository.AnimalBDDRepo;
-import com.example.projetveto.repository.AnimalRepository;
 import com.example.projetveto.repository.ConsultationBDDRepo;
 import com.example.projetveto.repository.ConsultationRepository;
 
@@ -19,6 +16,9 @@ public class ConsultationViewModel extends AndroidViewModel {
     ConsultationRepository repository;
 
     private LiveData<List<Consultation>> observer = null;
+    public LiveData<List<Consultation>> observerGetRdvPasse = null;
+    public LiveData<List<Consultation>> observerGetRdvAVenir = null;
+
     public ConsultationViewModel(@NonNull Application application) {
         super(application);
         repository = new ConsultationBDDRepo(application);
@@ -28,6 +28,20 @@ public class ConsultationViewModel extends AndroidViewModel {
         return observer;
     }
 
+    public LiveData<List<Consultation>> getObserverGetRdvPasse(int id){
+        return getRdvPasse(id);
+    }
+    public LiveData<List<Consultation>> getObserverGetRdvAVenir(int id){
+        return getRdvAVenir(id);
+    }
+    public LiveData<List<Consultation>>  getRdvPasse(int id){
+        observerGetRdvPasse = repository.getRdvPasse(id);
+        return observerGetRdvPasse;
+    }
+    public LiveData<List<Consultation>> getRdvAVenir(int id){
+        observerGetRdvAVenir = repository.getRdvAVenir(id);
+        return observerGetRdvAVenir;
+    }
     public void insert(Consultation consultation) {
         repository.insert(consultation);
     }

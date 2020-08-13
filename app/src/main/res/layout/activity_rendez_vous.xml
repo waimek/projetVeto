@@ -6,15 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".activity.RendezVousActivity">
 
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textView12"
@@ -24,7 +26,6 @@
         android:layout_marginBottom="27dp"
         android:text="@string/rendez_vous_passes"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
@@ -33,24 +34,36 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="36dp"
+        android:onClick="onClickPrendreRDV"
         android:text="@string/prendre_rdv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        android:onClick="onClickPrendreRDV"/>
+        app:layout_constraintTop_toBottomOf="@+id/list_view_rdv" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="386dp"
-        android:layout_height="312dp"
-        android:layout_marginTop="27dp"
+    <ListView
+        android:id="@+id/list_view_rdv_passe"
+        android:layout_width="408dp"
+        android:layout_height="301dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/infos_animaux"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
+    <ListView
+        android:id="@+id/list_view_rdv"
+        android:layout_width="406dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/infos_animaux"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aucun_rdv" />
+
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/aucun_rdv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"

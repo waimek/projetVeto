@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".activity.ChoixVetoActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/list_view_veto"
+        android:layout_width="match_parent"
+        android:layout_height="651dp"
+        android:text="@string/infos_animaux"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <TextView
         android:id="@+id/textView13"
         android:layout_width="match_parent"

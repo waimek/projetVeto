@@ -52,7 +52,6 @@ public class InsertAnimalActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //if(item.getItemId() == R.id.itemresearc)
         Intent intent =null;
         switch (item.getItemId()) {
             case R.id.miAnimaux:

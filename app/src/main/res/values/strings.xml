@@ -40,4 +40,7 @@
     <string name="nom_inconnu">Nom inconnu</string>
     <string name="adresse_inconnue">Adresse inconnue</string>
     <string name="tel_inconnu">Téléphone inconnu</string>
+    <string name="a">A :</string>
+    <string name="le">Le :</string>
+    <string name="valider">Valider</string>
 </resources>
