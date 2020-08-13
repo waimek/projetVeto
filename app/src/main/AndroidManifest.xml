@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".activity.ChoixVetoActivity"/>
         <activity android:name=".activity.ChoixDateHeureActivity"></activity>
         <activity android:name=".activity.InsertAnimalActivity"></activity>
         <activity android:name=".activity.RendezVousActivity" />

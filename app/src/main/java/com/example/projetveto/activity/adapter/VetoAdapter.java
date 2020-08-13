@@ -24,7 +24,6 @@ public class VetoAdapter extends ArrayAdapter<Veto> {
     @androidx.annotation.NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        //On décompresse le fichier style_ligne_utilisateur.xml
         LayoutInflater li = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View nouvelleLigne = li.inflate(R.layout.activity_choix_veto_list,parent,false);
 

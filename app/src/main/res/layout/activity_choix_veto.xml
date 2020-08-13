@@ -20,19 +20,20 @@
     <ListView
         android:id="@+id/list_view_veto"
         android:layout_width="match_parent"
-        android:layout_height="651dp"
+        android:layout_height="530dp"
+        android:layout_marginTop="72dp"
         android:text="@string/infos_animaux"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        tools:layout_editor_absoluteX="40dp" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="20dp"
         android:text="@string/choix_veto"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
